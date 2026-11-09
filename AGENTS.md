@@ -32,11 +32,14 @@ This repository is **one customer’s website**, not a multi-tenant generator. T
 - Put brand-specific UI in `components/site/`, page blocks in `components/sections/`.
 - **Dependencies:** do not add packages without a clear reason (accessibility, performance, maintainability, or a feature you cannot reasonably build). Do not duplicate overlapping UI libraries.
 
-**Quality scripts (required before finish)**
+**Required before finish**
 
 ```bash
-npm run check   # lint + typecheck + production build
+npm run typecheck
+npm run build
 ```
+
+Do not open the site in a browser or run a visual QA pass.
 
 ---
 
@@ -66,9 +69,8 @@ Classify the request:
 3. **Create `DESIGN.md`** at the repo root **before** substantial implementation (see section 5).
 4. Update semantic tokens in `app/globals.css`, `lang`/`dir`/fonts in `app/layout.tsx`, and metadata.
 5. Implement pages, `components/site/*`, and `components/sections/*` as needed.
-6. Run `npm run check` and fix all errors.
-7. Review responsive layout (mobile ~360px and desktop) when a browser is available in the agent environment.
-8. Commit and push to `main`.
+6. Run `npm run typecheck` and `npm run build`, and fix all errors.
+7. Commit and push to `main`.
 
 ---
 
@@ -102,7 +104,7 @@ Do **not** ship `DESIGN.md` in the Foundation template for new repos — you cre
 3. Change **only** what the user requested.
 4. Preserve visual identity unless they asked for a redesign.
 5. Update `DESIGN.md` when design decisions change.
-6. Run `npm run check`, then commit and push.
+6. Run `npm run typecheck` and `npm run build`, then commit and push.
 
 ---
 
@@ -186,17 +188,10 @@ Do **not** add pre-made marketing sections to the Foundation; create them per `D
 
 ---
 
-## 15. Validation and visual QA
+## 15. Validation
 
-**Technical (required)**
-
-- `npm run check` passes.
-
-**Visual (when a browser is available)**
-
-- Compare result to `DESIGN.md`.
-- Check mobile and desktop; spacing, type, and imagery.
-- If no browser tool is available, say so — do not claim visual QA was done.
+- `npm run typecheck` and `npm run build` pass.
+- Do not test the site in a browser.
 
 ---
 
@@ -214,7 +209,7 @@ Do not finish until:
 
 - [ ] User request implemented
 - [ ] `DESIGN.md` exists/updated for site work
-- [ ] `npm run check` passes
+- [ ] `npm run typecheck` and `npm run build` pass
 - [ ] No broken routes or missing critical assets
 - [ ] Changes pushed to `main`
 - [ ] Summary to user reflects real work (in their language)

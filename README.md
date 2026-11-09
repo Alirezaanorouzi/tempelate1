@@ -32,7 +32,7 @@ npm run check
 
 ## Publish to GitHub (builder maintainers)
 
-1. Push this folder to **`Alirezaanorouzi/builder-clinic-template`** (or your `TEMPLATE_REPO_URL`).
+1. Push this folder to **`Alirezaanorouzi/tempelate1`** (or your `TEMPLATE_REPO_URL`).
 2. Enable **Template repository** in GitHub repo settings.
 3. Set builder `TEMPLATE_REPO_URL` / `TEMPLATE_REPO_REF` (default `main`).
 
